@@ -52,20 +52,19 @@
     counters.forEach(animateCount);
   }
 
-  /* ===== Court viz tab switcher ===== */
-  const tabs = document.querySelectorAll('.courtviz-stage .tab');
-  const layers = {
-    heatmap: document.querySelector('.layer-heatmap'),
-    shotmap: document.querySelector('.layer-shotmap'),
-    footwork: document.querySelector('.layer-footwork'),
-  };
-  tabs.forEach((tab) => {
+  /* ===== Features vertical tabs ===== */
+  const featTabs = document.querySelectorAll('.feat-tab');
+  const featImgs = document.querySelectorAll('.feat-img');
+  featTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const key = tab.dataset.tab;
-      tabs.forEach((t) => t.classList.toggle('active', t === tab));
-      Object.entries(layers).forEach(([k, el]) => {
-        if (!el) return;
-        el.style.display = k === key ? '' : 'none';
+      const target = tab.dataset.feat;
+      featTabs.forEach((t) => {
+        const isActive = t === tab;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      featImgs.forEach((img) => {
+        img.classList.toggle('active', img.dataset.feat === target);
       });
     });
   });

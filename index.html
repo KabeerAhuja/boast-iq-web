@@ -86,12 +86,17 @@
   <div class="wrap trust-inner">
     <p class="trust-line">Built by players and coaches from</p>
     <div class="trust-logos" aria-hidden="true">
-      <span>MIT</span>
-      <span>UPENN</span>
-      <span>ROCHESTER</span>
-      <span>DREXTON</span>
-      <span>SQUASH ZONE</span>
-      <span>BAY CLUB</span>
+      <span class="trust-chip">MIT</span>
+      <span class="trust-sep"></span>
+      <span class="trust-chip">UPENN</span>
+      <span class="trust-sep"></span>
+      <span class="trust-chip">ROCHESTER</span>
+      <span class="trust-sep"></span>
+      <span class="trust-chip">DREXTON</span>
+      <span class="trust-sep"></span>
+      <span class="trust-chip">SQUASH ZONE</span>
+      <span class="trust-sep"></span>
+      <span class="trust-chip">BAY CLUB</span>
     </div>
   </div>
 </section>
@@ -100,170 +105,66 @@
 <section class="features" id="features">
   <div class="wrap">
     <header class="section-head">
-      <h2>Everything you need to study your game.</h2>
+      <h2>The only tool you need to win.</h2>
       <p class="section-sub">From the first serve to the last winner. Broken down, mapped out, and explained.</p>
     </header>
 
-    <div class="feature-grid feature-grid-4">
-      <article class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="24" rx="2" fill="none" stroke="#3A3A3F" stroke-width="1.5"/><rect x="6" y="20" width="14" height="12" fill="#A0283A" opacity="0.7"/><rect x="20" y="14" width="14" height="18" fill="#B8D4E0" opacity="0.6"/></svg>
-        </div>
-        <h3>Court heatmaps</h3>
-        <p>See where you spent the match, and where your opponent put you. T-zone occupancy, dead zones, danger zones.</p>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#3A3A3F" stroke-width="1.5"/><path d="M20 20 L20 7 A13 13 0 0 1 32 24 Z" fill="#A0283A"/><path d="M20 20 L32 24 A13 13 0 0 1 20 33 Z" fill="#B8D4E0" opacity="0.8"/></svg>
-        </div>
-        <h3>Shot analytics</h3>
-        <p>Drives, drops, boasts, lobs, kills. Auto-classified and counted. Win rates per shot type, per quarter.</p>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 40 40"><rect x="4" y="14" width="6" height="20" fill="#3A3A3F"/><rect x="14" y="8" width="6" height="26" fill="#A0283A"/><rect x="24" y="18" width="6" height="16" fill="#B8D4E0"/><rect x="34" y="12" width="2" height="22" fill="#3A3A3F"/></svg>
-        </div>
-        <h3>Rally breakdown</h3>
-        <p>Every rally timestamped, scored, and scrubbable. Jump to the points you lost. Loop the patterns you won.</p>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 40 40"><circle cx="12" cy="12" r="5" fill="#A0283A"/><circle cx="28" cy="20" r="5" fill="#B8D4E0"/><circle cx="14" cy="30" r="5" fill="#3A3A3F"/><path d="M12 12 L28 20 M14 30 L28 20" stroke="#3A3A3F" stroke-width="1.5"/></svg>
-        </div>
-        <h3>Coach collaboration</h3>
-        <p>Share matches with your coach, drop in timestamped notes, build a highlight reel, or share individual points.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =========================  HOW IT WORKS  ========================= -->
-<section class="how" id="how">
-  <div class="wrap">
-    <header class="section-head">
-      <h2>Three steps from a phone video to a full breakdown.</h2>
-    </header>
-
-    <ol class="steps">
-      <li class="step">
-        <div class="step-num">01</div>
-        <h3>Upload your match</h3>
-        <p>Drop a video from your phone or camera. MP4 or MOV, 720p or 1080p.</p>
-        <div class="step-visual step-upload" aria-hidden="true">
-          <div class="dropzone">
-            <div class="dropzone-arrow">↑</div>
-            <div class="dropzone-text">match.mp4</div>
+    <div class="features-split">
+      <div class="features-tabs" role="tablist" aria-orientation="vertical">
+        <button class="feat-tab active" type="button" role="tab" data-feat="heatmap" aria-selected="true">
+          <div class="feat-tab-head">
+            <span class="feat-tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="9" height="10" fill="currentColor" opacity="0.65"/></svg>
+            </span>
+            <span class="feat-tab-title">Player Heatmaps</span>
           </div>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-num">02</div>
-        <h3>We track everything</h3>
-        <p>Our AI tracks both players and the ball through every rally. You get a full breakdown in minutes.</p>
-        <div class="step-visual step-track" aria-hidden="true">
-          <div class="track-row"><span class="dot-r"></span><span class="lbl">Player 1</span><span class="bar bar-r"><i></i></span></div>
-          <div class="track-row"><span class="dot-b"></span><span class="lbl">Player 2</span><span class="bar bar-b"><i></i></span></div>
-          <div class="track-row"><span class="dot-w"></span><span class="lbl">Ball path</span><span class="bar bar-w"><i></i></span></div>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-num">03</div>
-        <h3>You learn what to fix</h3>
-        <p>Heatmaps, shot maps, and rally-by-rally stats — surfaced as patterns, not numbers.</p>
-        <div class="step-visual step-learn" aria-hidden="true">
-          <div class="insight">
-            <span class="insight-label">Pattern detected</span>
-            <span class="insight-text">You lost 71% of points after a short cross-court.</span>
+          <div class="feat-tab-body">
+            <p>Squash is a fight for the T, depth, and width. Boast IQ maps every step and every shot onto a top-down view, so the patterns finally show up.</p>
           </div>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
+        </button>
 
-<!-- =========================  COURT VIZ  ========================= -->
-<section class="courtviz">
-  <div class="wrap courtviz-inner">
-    <div class="courtviz-copy">
-      <h2>See the court like never before.</h2>
-      <p>Squash is a fight for the T, depth, and width. Boast IQ maps every step and every shot onto a top-down view, so the patterns finally show up.</p>
-      <ul class="courtviz-bullets">
-        <li>T-zone occupancy, per quarter, per player.</li>
-        <li>Shot map with bounce points and rail-vs-cross splits.</li>
-        <li>Footwork density showing your push-off corners.</li>
-      </ul>
-    </div>
+        <button class="feat-tab" type="button" role="tab" data-feat="shot" aria-selected="false">
+          <div class="feat-tab-head">
+            <span class="feat-tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 12 L12 3 A9 9 0 0 1 19 14 Z" fill="currentColor"/></svg>
+            </span>
+            <span class="feat-tab-title">Shot Analytics</span>
+          </div>
+          <div class="feat-tab-body">
+            <p>Detailed stats on the placement of your shots and the type to improve your strategy and consistency.</p>
+          </div>
+        </button>
 
-    <div class="courtviz-stage">
-      <div class="tabs" role="tablist">
-        <button class="tab active" role="tab" data-tab="heatmap">Player heatmap</button>
-        <button class="tab" role="tab" data-tab="shotmap">Shot map</button>
+        <button class="feat-tab" type="button" role="tab" data-feat="rally" aria-selected="false">
+          <div class="feat-tab-head">
+            <span class="feat-tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="10" width="3" height="11" fill="currentColor"/><rect x="8" y="6" width="3" height="15" fill="currentColor"/><rect x="13" y="13" width="3" height="8" fill="currentColor"/><rect x="18" y="9" width="3" height="12" fill="currentColor"/></svg>
+            </span>
+            <span class="feat-tab-title">Rally Breakdown</span>
+          </div>
+          <div class="feat-tab-body">
+            <p>Every rally timestamped, scored, and scrubbable. Jump to the points you lost and loop the patterns you won.</p>
+          </div>
+        </button>
+
+        <button class="feat-tab" type="button" role="tab" data-feat="coach" aria-selected="false">
+          <div class="feat-tab-head">
+            <span class="feat-tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="8" cy="9" r="3.5" fill="currentColor"/><circle cx="17" cy="14" r="3.5" fill="currentColor" opacity="0.7"/><path d="M8 9 L17 14" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
+            <span class="feat-tab-title">Coach Collaboration</span>
+          </div>
+          <div class="feat-tab-body">
+            <p>Share matches with your coach, drop in timestamped notes, build a highlight reel, or share individual points.</p>
+          </div>
+        </button>
       </div>
 
-      <div class="court-frame">
-        <img class="court-img layer-heatmap" src="assets/player-heatmap.png" alt="Player heatmap">
-        <img class="court-img layer-shotmap" src="assets/shot-map.png" alt="Shot map" style="display:none;">
-        <div class="court-legend">
-          <span><i class="leg-r"></i> You</span>
-          <span><i class="leg-b"></i> Opp</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================  DASHBOARD PREVIEW  ========================= -->
-<section class="dashboard">
-  <div class="wrap">
-    <header class="section-head center">
-      <span class="eyebrow"><span class="dot"></span> Post-match dashboard</span>
-      <h2>Every number that matters. None that don't.</h2>
-    </header>
-
-    <div class="dash-frame">
-      <div class="window-chrome">
-        <span></span><span></span><span></span>
-        <div class="window-url">boastiq.app · matches · vs. R. Khan · Apr 14</div>
-      </div>
-      <div class="dash-body">
-        <div class="dash-kpis">
-          <div class="kpi">
-            <div class="kpi-label">T-control</div>
-            <div class="kpi-num"><span data-count="68">68</span>%</div>
-            <div class="kpi-delta up">↑ 4% vs. last 5</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Avg rally</div>
-            <div class="kpi-num"><span data-count="9.2" data-decimals="1">9.2</span><span class="kpi-unit">shots</span></div>
-            <div class="kpi-delta">— even</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Tightness</div>
-            <div class="kpi-num"><span data-count="78">78</span><span class="kpi-unit">/100</span></div>
-            <div class="kpi-delta up">↑ 6</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Depth</div>
-            <div class="kpi-num"><span data-count="84">84</span><span class="kpi-unit">/100</span></div>
-            <div class="kpi-delta up">↑ 4</div>
-          </div>
-        </div>
-        <div class="dash-chart">
-          <div class="chart-head">
-            <span>Rally length over time</span>
-            <span class="chart-sub">Game 1 — 3</span>
-          </div>
-          <svg viewBox="0 0 800 180" class="chart-svg" aria-hidden="true">
-            <polyline points="0,140 60,120 120,90 180,110 240,70 300,80 360,50 420,60 480,40 540,55 600,30 660,45 720,25 800,35"
-                      fill="none" stroke="#A0283A" stroke-width="2.5"/>
-            <polyline points="0,150 60,135 120,115 180,130 240,95 300,100 360,80 420,90 480,70 540,80 600,60 660,75 720,55 800,65"
-                      fill="none" stroke="#A0283A" stroke-width="2.5" stroke-dasharray="5 6" opacity="0.7"/>
-            <line x1="0" y1="170" x2="800" y2="170" stroke="#3A3A3F"/>
-          </svg>
-        </div>
+      <div class="features-stage" aria-live="polite">
+        <img class="feat-img active" data-feat="heatmap" src="assets/player-heatmap.png" alt="Player heatmap visualization">
+        <img class="feat-img" data-feat="shot" src="assets/shot-map.png" alt="Shot map with bounce points">
+        <img class="feat-img" data-feat="rally" src="assets/match-stats.png" alt="Rally and shot stat breakdown">
+        <img class="feat-img" data-feat="coach" src="assets/Coach-collaboration.png" alt="Coach collaboration with notes">
       </div>
     </div>
   </div>
@@ -293,12 +194,11 @@
     <div class="coaches-copy">
       <span class="eyebrow"><span class="dot"></span> For coaches & academies</span>
       <h2>Review your whole roster from one screen.</h2>
-      <p>Team matches in a single feed. Side-by-side rallies. Inline annotations that your players actually see. Built for the way you already coach — just with the tape doing some of the work.</p>
-      <form class="coaches-cta" onsubmit="event.preventDefault(); alert('Thanks — we will email you when team mode opens.');">
-        <input type="email" placeholder="your@academy.com" aria-label="Email for team mode waitlist" required>
-        <button type="submit" class="btn btn-primary">Notify me</button>
+      <p>Team matches in a single feed. Side-by-side rallies. Inline annotations that your players actually see. Built for the way you already coach, with the tape doing some of the work.</p>
+      <form class="coaches-cta" onsubmit="event.preventDefault(); window.location.href='mailto:hello@boast-iq.com?subject=Coach%20%26%20Academy%20inquiry';">
+        <input type="email" placeholder="your@academy.com" aria-label="Email for coach contact" required>
+        <button type="submit" class="btn btn-primary">Contact us</button>
       </form>
-      <p class="coaches-note">Team mode is rolling out in waves. We'll email when your spot opens.</p>
     </div>
   </div>
 </section>
@@ -306,10 +206,6 @@
 <!-- =========================  PRICING  ========================= -->
 <section class="pricing" id="pricing">
   <div class="wrap">
-    <header class="section-head center">
-      <span class="eyebrow"><span class="dot"></span> Pricing</span>
-      <h2>Start free. Upgrade when you're hooked.</h2>
-    </header>
     <div class="price-grid">
       <article class="price">
         <h3>Free</h3>
@@ -349,7 +245,7 @@
           <li>Annotations &amp; clip assignments</li>
           <li>Per-player progress reports</li>
         </ul>
-        <a href="#coaches" class="btn btn-ghost btn-block">Join waitlist</a>
+        <a href="#coaches" class="btn btn-ghost btn-block">Contact us</a>
       </article>
     </div>
   </div>
@@ -434,15 +330,15 @@
       </div>
       <div>
         <h4>Company</h4>
-        <a href="https://app.boast-iq.com">About</a>
-        <a href="https://app.boast-iq.com">Contact</a>
-        <a href="https://app.boast-iq.com">Press</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Press</a>
       </div>
       <div>
         <h4>Legal</h4>
-        <a href="https://app.boast-iq.com">Privacy</a>
-        <a href="https://app.boast-iq.com">Terms</a>
-        <a href="https://app.boast-iq.com">Security</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
       </div>
     </div>
   </div>
