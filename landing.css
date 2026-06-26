@@ -259,7 +259,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 }
 .laptop-screen {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3106 / 1882; /* matches dashboard-preview.png natural ratio */
   background: #0e0e10;
   overflow: hidden;
 }
