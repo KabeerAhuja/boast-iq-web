@@ -920,9 +920,10 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 
 .trust-inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 22px;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 .trust-line {
   margin: 0;
@@ -931,12 +932,13 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 .trust-logos {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
+  justify-content: flex-end;
+  gap: 14px;
   flex-wrap: wrap;
 }
 .trust-chip {
