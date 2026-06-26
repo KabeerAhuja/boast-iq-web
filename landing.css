@@ -220,15 +220,10 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 }
 .hero-meta .bullet { color: var(--hair); }
 
-/* ===== Hero: laptop + phone split ===== */
+/* ===== Hero: laptop full-width ===== */
 .hero-product {
-  display: grid;
-  grid-template-columns: 1.95fr 1fr;
-  gap: 56px;
-  align-items: center;
-}
-@media (max-width: 880px) {
-  .hero-product { grid-template-columns: 1fr; gap: 32px; justify-items: center; }
+  display: block;
+  width: 100%;
 }
 
 /* Laptop frame */
@@ -264,7 +259,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 }
 .laptop-screen {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   background: #0e0e10;
   overflow: hidden;
 }
