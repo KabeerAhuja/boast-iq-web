@@ -195,7 +195,7 @@
       <span class="eyebrow"><span class="dot"></span> For coaches & academies</span>
       <h2>Review your whole roster from one screen.</h2>
       <p>Team matches in a single feed. Side-by-side rallies. Inline annotations that your players actually see. Built for the way you already coach, with the tape doing some of the work.</p>
-      <form class="coaches-cta" onsubmit="event.preventDefault(); window.location.href='mailto:hello@boast-iq.com?subject=Coach%20%26%20Academy%20inquiry';">
+      <form class="coaches-cta" onsubmit="event.preventDefault(); var em=this.querySelector('input[type=email]').value.trim(); var body=encodeURIComponent('Hi Vrain,\n\nI run coaching at:\n\nMy email: '+em+'\n\nLooking forward to hearing about Boast IQ for our team.\n'); window.location.href='mailto:vrain@boastiq.com?subject='+encodeURIComponent('Coach &amp; Academy inquiry')+'&amp;body='+body;">
         <input type="email" placeholder="your@academy.com" aria-label="Email for coach contact" required>
         <button type="submit" class="btn btn-primary">Contact us</button>
       </form>
