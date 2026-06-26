@@ -1718,9 +1718,12 @@ section { padding: 96px 0; }
 .footer-brand .brand { margin-bottom: 8px; }
 .footer-tag { color: var(--ink-2); font-size: 14px; margin: 0; }
 .footer-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 48px;
+}
+@media (max-width: 760px) {
+  .footer-cols { justify-content: flex-start; }
 }
 .footer-cols a {
   display: block;
