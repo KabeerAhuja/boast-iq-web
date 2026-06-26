@@ -907,9 +907,10 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 .trust-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
+  text-align: center;
 }
 .trust-line {
   margin: 0;
