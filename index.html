@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Boast IQ — Squash, decoded.</title>
+<meta name="description" content="AI tracking for every player, every ball, every shot — from any phone video, in your browser." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+<!-- =========================  NAV  ========================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner wrap">
+    <a class="brand" href="#top" aria-label="Boast IQ home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect x="0" y="0" width="32" height="32" rx="7" fill="#1A1A1C"/>
+          <path d="M3 9 L11 4 L19 11" stroke="#A0283A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="13" y="22" font-family="Inter, sans-serif" font-weight="800" font-size="13" fill="#B8D4E0" font-style="italic">IQ</text>
+          <path d="M20 21 L29 28" stroke="#A0283A" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 2"/>
+        </svg>
+      </span>
+      <span class="brand-word">Boast <span class="brand-iq">IQ</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#coaches">For coaches</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#">Sign in</a>
+      <a class="btn btn-primary" href="#">Try free</a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================  HERO  ========================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <!-- ambient dashed trajectory motif -->
+    <svg class="hero-trace" viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <path d="M -50 620 Q 400 400 720 480 T 1500 280" stroke="#A0283A" stroke-width="2" fill="none" stroke-dasharray="6 10" opacity="0.18"/>
+      <path d="M -50 720 Q 500 560 820 600 T 1500 420" stroke="#A0283A" stroke-width="2" fill="none" stroke-dasharray="6 10" opacity="0.10"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1 class="display">
+        Squash, <span class="display-accent">decoded.</span>
+      </h1>
+      <p class="lede">
+        AI tracking for every player, every ball, every shot.
+        From any phone video, in your browser.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#">Upload a match</a>
+        <a class="btn btn-ghost btn-lg" href="#how">Watch demo →</a>
+      </div>
+      <div class="hero-meta">
+        <span>No app to install</span>
+        <span class="bullet">•</span>
+        <span>Works with any phone footage</span>
+      </div>
+    </div>
+
+    <div class="hero-product" aria-label="Boast IQ analytics preview">
+      <!-- LEFT: laptop with dashboard screenshot -->
+      <div class="laptop-frame">
+        <div class="laptop-chrome">
+          <span></span><span></span><span></span>
+          <div class="laptop-url">boastiq.app · matches · vs. R. Khan</div>
+        </div>
+        <div class="laptop-screen">
+          <div class="screen-fallback" aria-hidden="true">
+            <div class="fb-title">Viewing tracked results.</div>
+            <div class="fb-sub">Drop screenshot at <code>assets/dashboard-preview.png</code></div>
+          </div>
+          <img class="screen-img" src="assets/dashboard-preview.png"
+               alt="Boast IQ tracked-results dashboard"
+               onerror="this.remove()">
+        </div>
+      </div>
+
+      <!-- RIGHT: phone with mobile stats panel -->
+      <div class="phone-frame" aria-label="Boast IQ on mobile">
+        <div class="phone-notch" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <header class="phone-statusbar" aria-hidden="true">
+            <span class="phone-time">9:41</span>
+            <span class="phone-icons">
+              <svg viewBox="0 0 16 10" width="16" height="10"><rect x="0" y="3" width="2" height="7" fill="#fff"/><rect x="4" y="2" width="2" height="8" fill="#fff"/><rect x="8" y="1" width="2" height="9" fill="#fff"/><rect x="12" y="0" width="2" height="10" fill="#fff"/></svg>
+              <svg viewBox="0 0 24 10" width="22" height="10"><rect x="0" y="1" width="20" height="8" rx="2" fill="none" stroke="#fff" stroke-width="1"/><rect x="2" y="3" width="14" height="4" fill="#fff"/><rect x="21" y="3" width="2" height="4" rx="1" fill="#fff"/></svg>
+            </span>
+          </header>
+          <header class="phone-head">
+            <span class="phone-eyebrow">MATCH</span>
+            <span class="phone-title">vs. R. Khan <span class="phone-q">· Q3</span></span>
+          </header>
+
+          <div class="phone-content">
+            <div class="stat-row">
+              <div class="stat-label">T-control</div>
+              <div class="stat-val"><span class="num" data-count="72">72</span><span class="unit">%</span></div>
+              <div class="bar"><span style="--pct:72%"></span></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label">Avg rally length</div>
+              <div class="stat-val"><span class="num" data-count="8.4" data-decimals="1">8.4</span><span class="unit">shots</span></div>
+            </div>
+            <div class="stat-grid">
+              <div class="mini">
+                <div class="mini-label">Tightness</div>
+                <div class="mini-val"><span class="num" data-count="78">78</span><span class="mini-unit">/100</span></div>
+              </div>
+              <div class="mini">
+                <div class="mini-label">Depth</div>
+                <div class="mini-val"><span class="num" data-count="84">84</span><span class="mini-unit">/100</span></div>
+              </div>
+            </div>
+            <div class="stat-row pressure-row">
+              <div class="stat-label">Pressure score</div>
+              <div class="pressure-vs">
+                <div class="pressure-side">
+                  <span class="pressure-who">You</span>
+                  <span class="num accent" data-count="67">67</span>
+                </div>
+                <div class="pressure-divider"></div>
+                <div class="pressure-side pressure-opp">
+                  <span class="pressure-who">Opp</span>
+                  <span class="num iq" data-count="41">41</span>
+                </div>
+              </div>
+              <div class="pressure-bar" aria-hidden="true">
+                <span class="pressure-you" style="--pct:62%"></span>
+                <span class="pressure-them" style="--pct:38%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  TRUST STRIP  ========================= -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <p class="trust-line">Built for squash players, by squash players.</p>
+    <div class="trust-logos" aria-hidden="true">
+      <span>SQUASH ACADEMY</span>
+      <span>RACQUET CLUB</span>
+      <span>COLLEGIATE SQUASH</span>
+      <span>PRO TOUR JUNIORS</span>
+      <span>NATIONAL TEAMS</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  FEATURES  ========================= -->
+<section class="features" id="features">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Everything you need to study your game.</h2>
+      <p class="section-sub">From the first serve to the last winner. Broken down, mapped out, and explained.</p>
+    </header>
+
+    <div class="feature-grid feature-grid-4">
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="24" rx="2" fill="none" stroke="#3A3A3F" stroke-width="1.5"/><rect x="6" y="20" width="14" height="12" fill="#A0283A" opacity="0.7"/><rect x="20" y="14" width="14" height="18" fill="#B8D4E0" opacity="0.6"/></svg>
+        </div>
+        <h3>Court heatmaps</h3>
+        <p>See where you spent the match, and where your opponent put you. T-zone occupancy, dead zones, danger zones.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#3A3A3F" stroke-width="1.5"/><path d="M20 20 L20 7 A13 13 0 0 1 32 24 Z" fill="#A0283A"/><path d="M20 20 L32 24 A13 13 0 0 1 20 33 Z" fill="#B8D4E0" opacity="0.8"/></svg>
+        </div>
+        <h3>Shot analytics</h3>
+        <p>Drives, drops, boasts, lobs, kills. Auto-classified and counted. Win rates per shot type, per quarter.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 40 40"><rect x="4" y="14" width="6" height="20" fill="#3A3A3F"/><rect x="14" y="8" width="6" height="26" fill="#A0283A"/><rect x="24" y="18" width="6" height="16" fill="#B8D4E0"/><rect x="34" y="12" width="2" height="22" fill="#3A3A3F"/></svg>
+        </div>
+        <h3>Rally breakdown</h3>
+        <p>Every rally timestamped, scored, and scrubbable. Jump to the points you lost. Loop the patterns you won.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 40 40"><circle cx="12" cy="12" r="5" fill="#A0283A"/><circle cx="28" cy="20" r="5" fill="#B8D4E0"/><circle cx="14" cy="30" r="5" fill="#3A3A3F"/><path d="M12 12 L28 20 M14 30 L28 20" stroke="#3A3A3F" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Coach collaboration</h3>
+        <p>Share matches with your coach, drop in timestamped notes, build a highlight reel, or share individual points.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  HOW IT WORKS  ========================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Three steps from a phone video to a full breakdown.</h2>
+    </header>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step-num">01</div>
+        <h3>Upload your match</h3>
+        <p>Drop a video from your phone or camera. MP4 or MOV, 720p or 1080p.</p>
+        <div class="step-visual step-upload" aria-hidden="true">
+          <div class="dropzone">
+            <div class="dropzone-arrow">↑</div>
+            <div class="dropzone-text">match.mp4</div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">02</div>
+        <h3>We track everything</h3>
+        <p>Our AI tracks both players and the ball through every rally. You get a full breakdown in minutes.</p>
+        <div class="step-visual step-track" aria-hidden="true">
+          <div class="track-row"><span class="dot-r"></span><span class="lbl">Player 1</span><span class="bar bar-r"><i></i></span></div>
+          <div class="track-row"><span class="dot-b"></span><span class="lbl">Player 2</span><span class="bar bar-b"><i></i></span></div>
+          <div class="track-row"><span class="dot-w"></span><span class="lbl">Ball path</span><span class="bar bar-w"><i></i></span></div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">03</div>
+        <h3>You learn what to fix</h3>
+        <p>Heatmaps, shot maps, and rally-by-rally stats — surfaced as patterns, not numbers.</p>
+        <div class="step-visual step-learn" aria-hidden="true">
+          <div class="insight">
+            <span class="insight-label">Pattern detected</span>
+            <span class="insight-text">You lost 71% of points after a short cross-court.</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================  COURT VIZ  ========================= -->
+<section class="courtviz">
+  <div class="wrap courtviz-inner">
+    <div class="courtviz-copy">
+      <h2>See the court like never before.</h2>
+      <p>Squash is a fight for the T, depth, and width. Boast IQ maps every step and every shot onto a top-down view, so the patterns finally show up.</p>
+      <ul class="courtviz-bullets">
+        <li>T-zone occupancy, per quarter, per player.</li>
+        <li>Shot map with bounce points and rail-vs-cross splits.</li>
+        <li>Footwork density showing your push-off corners.</li>
+      </ul>
+    </div>
+
+    <div class="courtviz-stage">
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" data-tab="heatmap">Player heatmap</button>
+        <button class="tab" role="tab" data-tab="shotmap">Shot map</button>
+      </div>
+
+      <div class="court-frame">
+        <img class="court-img layer-heatmap" src="assets/player-heatmap.png" alt="Player heatmap">
+        <img class="court-img layer-shotmap" src="assets/shot-map.png" alt="Shot map" style="display:none;">
+        <div class="court-legend">
+          <span><i class="leg-r"></i> You</span>
+          <span><i class="leg-b"></i> Opp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  DASHBOARD PREVIEW  ========================= -->
+<section class="dashboard">
+  <div class="wrap">
+    <header class="section-head center">
+      <span class="eyebrow"><span class="dot"></span> Post-match dashboard</span>
+      <h2>Every number that matters. None that don't.</h2>
+    </header>
+
+    <div class="dash-frame">
+      <div class="window-chrome">
+        <span></span><span></span><span></span>
+        <div class="window-url">boastiq.app · matches · vs. R. Khan · Apr 14</div>
+      </div>
+      <div class="dash-body">
+        <div class="dash-kpis">
+          <div class="kpi">
+            <div class="kpi-label">T-control</div>
+            <div class="kpi-num"><span data-count="68">68</span>%</div>
+            <div class="kpi-delta up">↑ 4% vs. last 5</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Avg rally</div>
+            <div class="kpi-num"><span data-count="9.2" data-decimals="1">9.2</span><span class="kpi-unit">shots</span></div>
+            <div class="kpi-delta">— even</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Tightness</div>
+            <div class="kpi-num"><span data-count="78">78</span><span class="kpi-unit">/100</span></div>
+            <div class="kpi-delta up">↑ 6</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Depth</div>
+            <div class="kpi-num"><span data-count="84">84</span><span class="kpi-unit">/100</span></div>
+            <div class="kpi-delta up">↑ 4</div>
+          </div>
+        </div>
+        <div class="dash-chart">
+          <div class="chart-head">
+            <span>Rally length over time</span>
+            <span class="chart-sub">Game 1 — 3</span>
+          </div>
+          <svg viewBox="0 0 800 180" class="chart-svg" aria-hidden="true">
+            <polyline points="0,140 60,120 120,90 180,110 240,70 300,80 360,50 420,60 480,40 540,55 600,30 660,45 720,25 800,35"
+                      fill="none" stroke="#A0283A" stroke-width="2.5"/>
+            <polyline points="0,150 60,135 120,115 180,130 240,95 300,100 360,80 420,90 480,70 540,80 600,60 660,75 720,55 800,65"
+                      fill="none" stroke="#A0283A" stroke-width="2.5" stroke-dasharray="5 6" opacity="0.7"/>
+            <line x1="0" y1="170" x2="800" y2="170" stroke="#3A3A3F"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  FOR COACHES  ========================= -->
+<section class="coaches" id="coaches">
+  <div class="wrap coaches-inner">
+    <div class="coaches-visual" aria-hidden="true">
+      <div class="grid-card">
+        <div class="grid-card-thumb t1"></div>
+        <div class="grid-card-meta"><b>A. Patel</b><span>Game 3 · win 11-7</span></div>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-thumb t2"></div>
+        <div class="grid-card-meta"><b>M. Singh</b><span>Game 2 · loss 8-11</span></div>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-thumb t3"></div>
+        <div class="grid-card-meta"><b>J. Lee</b><span>Game 1 · win 11-4</span></div>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-thumb t4"></div>
+        <div class="grid-card-meta"><b>R. Khan</b><span>Game 4 · loss 9-11</span></div>
+      </div>
+    </div>
+    <div class="coaches-copy">
+      <span class="eyebrow"><span class="dot"></span> For coaches & academies</span>
+      <h2>Review your whole roster from one screen.</h2>
+      <p>Team matches in a single feed. Side-by-side rallies. Inline annotations that your players actually see. Built for the way you already coach — just with the tape doing some of the work.</p>
+      <form class="coaches-cta" onsubmit="event.preventDefault(); alert('Thanks — we will email you when team mode opens.');">
+        <input type="email" placeholder="your@academy.com" aria-label="Email for team mode waitlist" required>
+        <button type="submit" class="btn btn-primary">Notify me</button>
+      </form>
+      <p class="coaches-note">Team mode is rolling out in waves. We'll email when your spot opens.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  PRICING  ========================= -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <header class="section-head center">
+      <span class="eyebrow"><span class="dot"></span> Pricing</span>
+      <h2>Start free. Upgrade when you're hooked.</h2>
+    </header>
+    <div class="price-grid">
+      <article class="price">
+        <h3>Free</h3>
+        <div class="price-num">$0<span>/mo</span></div>
+        <p class="price-sub">For the curious.</p>
+        <ul>
+          <li>2 matches per month</li>
+          <li>Player + ball tracking</li>
+          <li>Basic court heatmap</li>
+          <li>30-day match history</li>
+        </ul>
+        <a href="#" class="btn btn-ghost btn-block">Get started</a>
+      </article>
+
+      <article class="price price-feature">
+        <span class="price-badge">Most popular</span>
+        <h3>Player</h3>
+        <div class="price-num">$35<span>/mo</span></div>
+        <p class="price-sub">For serious amateurs.</p>
+        <ul>
+          <li>Unlimited matches</li>
+          <li>Full shot analytics</li>
+          <li>Footwork &amp; T-control</li>
+          <li>Shareable rally clips</li>
+          <li>Unlimited match history</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block">Start 7-day trial</a>
+      </article>
+
+      <article class="price">
+        <h3>Coach</h3>
+        <div class="price-num">Soon<span></span></div>
+        <p class="price-sub">For academies &amp; teams.</p>
+        <ul>
+          <li>Multi-player dashboard</li>
+          <li>Side-by-side rally compare</li>
+          <li>Annotations &amp; clip assignments</li>
+          <li>Per-player progress reports</li>
+        </ul>
+        <a href="#coaches" class="btn btn-ghost btn-block">Join waitlist</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  FAQ  ========================= -->
+<section class="faq">
+  <div class="wrap">
+    <header class="section-head center">
+      <span class="eyebrow"><span class="dot"></span> FAQ</span>
+      <h2>Quick answers.</h2>
+    </header>
+
+    <div class="faq-list">
+      <details>
+        <summary>What video format and quality should I upload?</summary>
+        <p>MP4 or MOV in 720p or 1080p works best. 30 fps or 60 fps. Anything your phone records (including iPhone .MOV files) is fine.</p>
+      </details>
+      <details>
+        <summary>Where should I put the camera?</summary>
+        <p>Tripod behind the court at glass-level, centered. Both players should be visible at all times. If your club has a balcony, that's ideal.</p>
+      </details>
+      <details>
+        <summary>How long does processing take?</summary>
+        <p>Roughly 1.5× match length on first run. An 8-minute clip processes in about 12 minutes. You'll get an email when it's ready.</p>
+      </details>
+      <details>
+        <summary>How accurate is the tracking?</summary>
+        <p>Player tracking is &gt;98% accurate across rallies. Ball tracking is &gt;90% on well-lit courts; harder conditions are still improving. We're transparent about confidence on every clip.</p>
+      </details>
+      <details>
+        <summary>Is my footage private?</summary>
+        <p>Yes. Your uploads are private to your account. Nothing is shared publicly without your explicit click-through.</p>
+      </details>
+      <details>
+        <summary>Do I need to download an app?</summary>
+        <p>No. Boast IQ runs entirely in your browser — laptop, tablet, or phone.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================  FINAL CTA  ========================= -->
+<section class="final-cta">
+  <div class="cta-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+      <path d="M -50 320 Q 300 80 720 200 T 1300 60" stroke="#A0283A" stroke-width="3" fill="none" stroke-dasharray="8 12" opacity="0.35"/>
+      <circle cx="1300" cy="60" r="6" fill="#C9344A"/>
+    </svg>
+  </div>
+  <div class="wrap final-inner">
+    <h2>Upload your first match. <span class="display-accent">Free.</span></h2>
+    <p>No card. No app. Just better squash.</p>
+    <a href="#" class="btn btn-primary btn-lg">Try Boast IQ</a>
+  </div>
+</section>
+
+<!-- =========================  FOOTER  ========================= -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <rect x="0" y="0" width="32" height="32" rx="7" fill="#1A1A1C"/>
+            <path d="M3 9 L11 4 L19 11" stroke="#A0283A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="13" y="22" font-family="Inter, sans-serif" font-weight="800" font-size="13" fill="#B8D4E0" font-style="italic">IQ</text>
+            <path d="M20 21 L29 28" stroke="#A0283A" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 2"/>
+          </svg>
+        </span>
+        <span class="brand-word">Boast <span class="brand-iq">IQ</span></span>
+      </a>
+      <p class="footer-tag">Squash, decoded.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Try free</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Press</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Boast IQ. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="landing.js"></script>
+</body>
+</html>
