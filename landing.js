@@ -52,21 +52,25 @@
     counters.forEach(animateCount);
   }
 
-  /* ===== Features vertical tabs ===== */
+  /* ===== Features vertical tabs (hover-driven with crossfade) ===== */
   const featTabs = document.querySelectorAll('.feat-tab');
   const featImgs = document.querySelectorAll('.feat-img');
-  featTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.feat;
-      featTabs.forEach((t) => {
-        const isActive = t === tab;
-        t.classList.toggle('active', isActive);
-        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
-      featImgs.forEach((img) => {
-        img.classList.toggle('active', img.dataset.feat === target);
-      });
+  const activateFeat = (tab) => {
+    const target = tab.dataset.feat;
+    if (tab.classList.contains('active')) return;
+    featTabs.forEach((t) => {
+      const isActive = t === tab;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
+    featImgs.forEach((img) => {
+      img.classList.toggle('active', img.dataset.feat === target);
+    });
+  };
+  featTabs.forEach((tab) => {
+    tab.addEventListener('mouseenter', () => activateFeat(tab));
+    tab.addEventListener('focus', () => activateFeat(tab));
+    tab.addEventListener('click', () => activateFeat(tab));
   });
 
   /* ===== FAQ: ensure only one open at a time (subtle nicety) ===== */
