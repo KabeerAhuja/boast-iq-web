@@ -945,7 +945,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 .trust-item {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   color: var(--ink-0);
   transition: color var(--t-fast), opacity var(--t-fast);
   opacity: 0.85;
@@ -955,13 +955,13 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   color: var(--accent-hot);
 }
 .trust-mark {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
 }
 .trust-name {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -971,8 +971,8 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 }
 @media (max-width: 560px) {
   .trust-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-  .trust-name { font-size: 14px; }
-  .trust-mark { width: 18px; height: 18px; }
+  .trust-name { font-size: 16px; }
+  .trust-mark { width: 24px; height: 24px; }
 }
 
 /* ============================================================
