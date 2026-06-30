@@ -991,6 +991,15 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
    ============================================================ */
 .section-head { max-width: 720px; margin-bottom: 48px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Features section: cyan gradient on the main headline (BoastIQ Tracker tracker-app style). */
+.features .section-head h2 {
+  background: linear-gradient(90deg, #E8F4F7 0%, #8FE3EC 45%, #4DD3E0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 .section-head.center .eyebrow { margin-left: auto; margin-right: auto; }
 .section-sub {
   color: var(--ink-1);
