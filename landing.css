@@ -991,15 +991,6 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
    ============================================================ */
 .section-head { max-width: 720px; margin-bottom: 48px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-
-/* Features section: cyan gradient on the main headline (BoastIQ Tracker tracker-app style). */
-.features .section-head h2 {
-  background: linear-gradient(90deg, #E8F4F7 0%, #8FE3EC 45%, #4DD3E0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
 .section-head.center .eyebrow { margin-left: auto; margin-right: auto; }
 .section-sub {
   color: var(--ink-1);
@@ -1010,7 +1001,14 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 .section-head.center .section-sub { margin: 0 auto; }
 
 section { padding: 96px 0; }
-.features { background: var(--bg-1); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.features {
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(77, 211, 224, 0.12), transparent 55%),
+    radial-gradient(ellipse at 15% 85%, rgba(143, 227, 236, 0.06), transparent 60%),
+    linear-gradient(135deg, #1F2A2E 0%, #243A40 100%);
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
 .how { background: var(--bg-0); }
 .courtviz { background: var(--bg-1); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
 .dashboard { background: var(--bg-0); }
