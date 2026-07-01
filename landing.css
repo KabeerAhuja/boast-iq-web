@@ -1002,7 +1002,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 
 section { padding: 96px 0; }
 .features {
-  background: linear-gradient(90deg, #E8F4F7 0%, #8FE3EC 45%, #4DD3E0 100%);
+  background: linear-gradient(270deg, #E8F4F7 0%, #8FE3EC 45%, #4DD3E0 100%);
   border-top: 1px solid var(--hair);
   border-bottom: 1px solid var(--hair);
 }
