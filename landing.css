@@ -1001,11 +1001,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 .section-head.center .section-sub { margin: 0 auto; }
 
 section { padding: 96px 0; }
-.features {
-  background: linear-gradient(270deg, #E8F4F7 0%, #8FE3EC 45%, #4DD3E0 100%);
-  border-top: 1px solid var(--hair);
-  border-bottom: 1px solid var(--hair);
-}
+.features { background: var(--bg-1); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
 .how { background: var(--bg-0); }
 .courtviz { background: var(--bg-1); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
 .dashboard { background: var(--bg-0); }
