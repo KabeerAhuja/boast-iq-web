@@ -3,6 +3,22 @@
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ===== Alpha announcement banner (dismissible, localStorage-backed) ===== */
+  (function initAlphaBanner() {
+    const KEY = 'boastiq_alpha_banner_dismissed';
+    const banner = document.getElementById('alpha-banner');
+    const closeBtn = document.getElementById('alpha-close');
+    if (!banner || !closeBtn) return;
+    try {
+      if (localStorage.getItem(KEY) === '1') return; // stay hidden
+    } catch (_) { /* localStorage disabled — show banner anyway */ }
+    banner.hidden = false;
+    closeBtn.addEventListener('click', () => {
+      banner.hidden = true;
+      try { localStorage.setItem(KEY, '1'); } catch (_) {}
+    });
+  })();
+
   /* ===== Nav: scroll state ===== */
   const nav = document.getElementById('nav');
   const onScroll = () => {

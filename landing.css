@@ -12,6 +12,10 @@
   --accent: #A0283A;
   --accent-hot: #C9344A;
   --iq-blue: #B8D4E0;
+  /* Cool-cyan highlight color, matches the tracker app's --accent so hero
+     highlights ("Advantage.") and eyebrow tags read as brand-consistent. */
+  --highlight: #00f0ff;
+  --highlight-soft: #7ff5ff;
   --ink-0: #F5F5F7;
   --ink-1: #B4B4BC;
   --ink-2: #828289;
@@ -26,6 +30,78 @@
 
   --t-fast: 180ms cubic-bezier(.2,.7,.2,1);
   --t-med: 320ms cubic-bezier(.2,.7,.2,1);
+}
+
+/* ============================================================
+   ALPHA ANNOUNCEMENT BANNER
+   ============================================================ */
+.alpha-banner {
+  width: 100%;
+  background: linear-gradient(90deg, var(--highlight), var(--highlight-soft));
+  color: #0b1417;
+  position: relative;
+  z-index: 60;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: alpha-in 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes alpha-in {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);      opacity: 1; }
+}
+.alpha-banner-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+.alpha-badge {
+  background: rgba(11, 20, 23, 0.15);
+  border: 1px solid rgba(11, 20, 23, 0.35);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0b1417;
+}
+.alpha-msg { flex: 1; }
+.alpha-msg strong { font-weight: 700; }
+.alpha-strike {
+  opacity: 0.6;
+  text-decoration: line-through;
+  margin-left: 4px;
+  font-size: 12px;
+}
+.alpha-cta {
+  color: #0b1417;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(11, 20, 23, 0.45);
+  padding-bottom: 1px;
+  transition: border-color var(--t-fast);
+}
+.alpha-cta:hover { border-color: #0b1417; }
+.alpha-close {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #0b1417;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity var(--t-fast), background var(--t-fast);
+}
+.alpha-close:hover { opacity: 1; background: rgba(11, 20, 23, 0.15); }
+
+@media (max-width: 640px) {
+  .alpha-banner-inner { padding: 10px 14px; gap: 10px; font-size: 12px; flex-wrap: wrap; }
+  .alpha-strike { display: none; }
 }
 
 * { box-sizing: border-box; }
@@ -55,7 +131,27 @@ button { font: inherit; cursor: pointer; }
   font-weight: 800;
   margin: 0 0 20px;
 }
-.display-accent { color: var(--accent-hot); }
+.display-accent { color: var(--highlight); }
+.price-old {
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--ink-2);
+  text-decoration: line-through;
+  font-size: 45%;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.price-alpha-note {
+  font-size: 12px;
+  color: var(--highlight);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+.price-alpha-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 h2 {
   font-size: clamp(30px, 3.5vw, 46px);

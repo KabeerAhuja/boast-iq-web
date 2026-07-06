@@ -34,6 +34,21 @@
 </head>
 <body>
 
+<!-- =========================  ALPHA BANNER  ========================= -->
+<!-- Alpha announcement bar. Hidden by default so there's no flash; landing.js
+     un-hides it unless the user previously dismissed (localStorage). -->
+<div id="alpha-banner" class="alpha-banner" hidden>
+  <div class="alpha-banner-inner">
+    <span class="alpha-badge">Alpha</span>
+    <span class="alpha-msg">
+      Join the alpha and lock in Player for <strong>$25/mo</strong>
+      <span class="alpha-strike">$35</span> — limited time.
+    </span>
+    <a class="alpha-cta" href="#pricing">See details →</a>
+    <button class="alpha-close" id="alpha-close" type="button" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
 <!-- =========================  NAV  ========================= -->
 <header class="nav" id="nav">
   <div class="nav-inner wrap">
@@ -274,7 +289,8 @@
 
       <article class="price price-feature">
         <h3>Player</h3>
-        <div class="price-num">$35<span>/mo</span></div>
+        <div class="price-num">$25<span>/mo</span><span class="price-old">$35</span></div>
+        <p class="price-alpha-note">Alpha limited time — join the alpha to lock in.</p>
         <p class="price-tagline">Train like a pro.</p>
         <p class="price-subline">Every match analyzed. Every shot accounted for.</p>
         <ul>
