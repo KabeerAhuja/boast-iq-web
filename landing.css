@@ -52,10 +52,33 @@
   max-width: 1240px;
   margin: 0 auto;
   padding: 10px 24px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 14px;
   font-size: 14px;
+}
+/* Left rail: the ALPHA badge, left-aligned */
+.alpha-banner-inner > .alpha-badge {
+  justify-self: start;
+}
+/* Middle: the message + inline CTA, centered */
+.alpha-banner-inner > .alpha-msg {
+  justify-self: center;
+  text-align: center;
+}
+/* Right rail: See details + X, right-aligned */
+.alpha-banner-inner > .alpha-cta,
+.alpha-banner-inner > .alpha-close {
+  justify-self: end;
+}
+/* Two items share the right rail — nest via a wrapper if needed;
+   simpler: give the right side its own subgrid. */
+.alpha-right {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 .alpha-badge {
   background: rgba(11, 20, 23, 0.15);
@@ -218,12 +241,19 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-1px); }
+/* Unified primary CTA: same cyan across nav ("Try free") and hero
+   ("Upload a match") and hero-scale ("Try Boast IQ"). High-contrast dark
+   ink on light cyan reads well and matches the alpha banner. */
 .btn-primary {
-  background: var(--accent);
-  color: var(--ink-0);
-  box-shadow: 0 8px 24px rgba(160,40,58,0.35);
+  background: var(--highlight);
+  color: #0b1417;
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.30);
+  font-weight: 700;
 }
-.btn-primary:hover { background: var(--accent-hot); }
+.btn-primary:hover {
+  background: var(--highlight-soft);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.40);
+}
 .btn-ghost {
   background: rgba(255,255,255,0.04);
   border-color: var(--hair);
@@ -1703,20 +1733,20 @@ section { padding: 96px 0; }
   display: flex; flex-direction: column;
 }
 .price-feature {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent), 0 20px 60px rgba(160,40,58,0.25);
+  border-color: var(--highlight);
+  box-shadow: 0 0 0 1px var(--highlight), 0 20px 60px rgba(0, 240, 255, 0.22);
   transform: translateY(-4px);
 }
 .price-badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--accent);
-  color: #fff;
+  background: var(--highlight);
+  color: #0b1417;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .price h3 { font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-1); margin-bottom: 8px; }
 .price-num {

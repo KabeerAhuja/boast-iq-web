@@ -29,6 +29,9 @@
 <meta name="twitter:image" content="https://boast-iq.com/assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload the hero dashboard image so it starts downloading in parallel with
+     the CSS/font requests, not after them. Cuts perceived first paint by seconds. -->
+<link rel="preload" as="image" href="assets/dashboard-preview.png" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="landing.css">
 </head>
@@ -44,8 +47,10 @@
       Join the alpha and lock in Player for <strong>$25/mo</strong>
       <span class="alpha-strike">$35</span> — limited time.
     </span>
-    <a class="alpha-cta" href="#pricing">See details →</a>
-    <button class="alpha-close" id="alpha-close" type="button" aria-label="Dismiss">✕</button>
+    <span class="alpha-right">
+      <a class="alpha-cta" href="#pricing">See details →</a>
+      <button class="alpha-close" id="alpha-close" type="button" aria-label="Dismiss">✕</button>
+    </span>
   </div>
 </div>
 
@@ -103,13 +108,18 @@
     <div class="hero-product" aria-label="Boast IQ analytics preview">
       <div class="laptop-frame">
         <div class="laptop-screen">
-          <div class="screen-fallback" aria-hidden="true">
+          <!-- Fallback is hidden by default; only reveals if the img errors out. -->
+          <div class="screen-fallback" aria-hidden="true" hidden>
             <div class="fb-title">Viewing tracked results.</div>
             <div class="fb-sub">Drop screenshot at <code>assets/dashboard-preview.png</code></div>
           </div>
+          <!-- Preloaded + high-priority so the hero image arrives ASAP. -->
           <img class="screen-img" src="assets/dashboard-preview.png"
                alt="Boast IQ tracked-results dashboard"
-               onerror="this.remove()">
+               fetchpriority="high"
+               loading="eager"
+               decoding="async"
+               onerror="this.remove(); this.previousElementSibling.hidden=false;">
         </div>
       </div>
     </div>
