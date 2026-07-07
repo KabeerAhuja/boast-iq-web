@@ -1048,6 +1048,19 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
+/* Real institution logos: normalize to monochrome white so brand-colored
+   PNGs (MIT red, Bay Club navy, etc.) all read cleanly on the dark bg
+   without competing color noise. Height caps to keep the row compact. */
+.trust-logo {
+  height: 40px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: opacity var(--t-fast);
+}
+.trust-item:hover .trust-logo { opacity: 1; }
 @media (max-width: 980px) {
   .trust-logos { justify-content: center; gap: 28px 40px; }
 }
@@ -1055,6 +1068,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   .trust-logos { gap: 22px 28px; }
   .trust-name { font-size: 16px; }
   .trust-mark { width: 24px; height: 24px; }
+  .trust-logo { height: 30px; max-width: 120px; }
 }
 
 /* ============================================================
