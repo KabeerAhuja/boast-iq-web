@@ -32,100 +32,9 @@
   --t-med: 320ms cubic-bezier(.2,.7,.2,1);
 }
 
-/* ============================================================
-   ALPHA ANNOUNCEMENT BANNER
-   ============================================================ */
-.alpha-banner {
-  width: 100%;
-  background: linear-gradient(90deg, var(--highlight), var(--highlight-soft));
-  color: #0b1417;
-  position: relative;
-  z-index: 60;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  animation: alpha-in 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-@keyframes alpha-in {
-  from { transform: translateY(-100%); opacity: 0; }
-  to   { transform: translateY(0);      opacity: 1; }
-}
-.alpha-banner-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 10px 24px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 14px;
-  font-size: 14px;
-}
-/* Left rail: the ALPHA badge, left-aligned */
-.alpha-banner-inner > .alpha-badge {
-  justify-self: start;
-}
-/* Middle: the message + inline CTA, centered */
-.alpha-banner-inner > .alpha-msg {
-  justify-self: center;
-  text-align: center;
-}
-/* Right rail: See details + X, right-aligned */
-.alpha-banner-inner > .alpha-cta,
-.alpha-banner-inner > .alpha-close {
-  justify-self: end;
-}
-/* Two items share the right rail — nest via a wrapper if needed;
-   simpler: give the right side its own subgrid. */
-.alpha-right {
-  justify-self: end;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.alpha-badge {
-  background: rgba(11, 20, 23, 0.15);
-  border: 1px solid rgba(11, 20, 23, 0.35);
-  padding: 2px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #0b1417;
-}
-.alpha-msg { flex: 1; }
-.alpha-msg strong { font-weight: 700; }
-.alpha-strike {
-  opacity: 0.6;
-  text-decoration: line-through;
-  margin-left: 4px;
-  font-size: 12px;
-}
-.alpha-cta {
-  color: #0b1417;
-  text-decoration: none;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(11, 20, 23, 0.45);
-  padding-bottom: 1px;
-  transition: border-color var(--t-fast);
-}
-.alpha-cta:hover { border-color: #0b1417; }
-.alpha-close {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  color: #0b1417;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 6px;
-  opacity: 0.7;
-  transition: opacity var(--t-fast), background var(--t-fast);
-}
-.alpha-close:hover { opacity: 1; background: rgba(11, 20, 23, 0.15); }
-
-@media (max-width: 640px) {
-  .alpha-banner-inner { padding: 10px 14px; gap: 10px; font-size: 12px; flex-wrap: wrap; }
-  .alpha-strike { display: none; }
-}
+/* Alpha banner removed. Cyan --highlight vars retained below because they're
+   still used for the two "Watch demo" and nav "Try free" cyan-highlighted
+   buttons. Rest of the site reverted to the original red accent scheme. */
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -154,7 +63,7 @@ button { font: inherit; cursor: pointer; }
   font-weight: 800;
   margin: 0 0 20px;
 }
-.display-accent { color: var(--highlight); }
+.display-accent { color: var(--accent-hot); }
 .price-old {
   display: inline-block;
   margin-left: 10px;
@@ -241,18 +150,40 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-1px); }
-/* Unified primary CTA: same cyan across nav ("Try free") and hero
-   ("Upload a match") and hero-scale ("Try Boast IQ"). High-contrast dark
-   ink on light cyan reads well and matches the alpha banner. */
+/* Primary CTA — red default (matches the "Advantage." highlight color). */
 .btn-primary {
+  background: var(--accent);
+  color: var(--ink-0);
+  box-shadow: 0 8px 24px rgba(160,40,58,0.35);
+}
+.btn-primary:hover { background: var(--accent-hot); }
+
+/* Two specifically highlighted buttons — cyan to draw the eye:
+   1. Nav "Try free" (top-right)
+   2. Hero "Watch demo" (secondary CTA next to Upload a match)
+   Rest of the primary/ghost buttons on the page stay red/muted. */
+.nav-cta .btn-primary {
   background: var(--highlight);
   color: #0b1417;
-  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.30);
+  box-shadow: 0 6px 18px rgba(0, 240, 255, 0.30);
   font-weight: 700;
 }
-.btn-primary:hover {
+.nav-cta .btn-primary:hover {
   background: var(--highlight-soft);
-  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.40);
+  box-shadow: 0 8px 22px rgba(0, 240, 255, 0.40);
+}
+.hero-actions .btn-ghost {
+  background: var(--highlight);
+  border-color: var(--highlight);
+  color: #0b1417;
+  box-shadow: 0 6px 18px rgba(0, 240, 255, 0.30);
+  font-weight: 700;
+}
+.hero-actions .btn-ghost:hover {
+  background: var(--highlight-soft);
+  border-color: var(--highlight-soft);
+  color: #0b1417;
+  box-shadow: 0 8px 22px rgba(0, 240, 255, 0.40);
 }
 .btn-ghost {
   background: rgba(255,255,255,0.04);
@@ -1733,20 +1664,20 @@ section { padding: 96px 0; }
   display: flex; flex-direction: column;
 }
 .price-feature {
-  border-color: var(--highlight);
-  box-shadow: 0 0 0 1px var(--highlight), 0 20px 60px rgba(0, 240, 255, 0.22);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 20px 60px rgba(160,40,58,0.25);
   transform: translateY(-4px);
 }
 .price-badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--highlight);
-  color: #0b1417;
+  background: var(--accent);
+  color: #fff;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .price h3 { font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-1); margin-bottom: 8px; }
 .price-num {
