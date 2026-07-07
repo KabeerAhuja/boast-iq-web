@@ -185,6 +185,20 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   color: #0b1417;
   box-shadow: 0 8px 22px rgba(0, 240, 255, 0.40);
 }
+
+/* Hero "Upload a match": no highlight — plain muted button so
+   Watch demo stays the visual anchor. Overrides the default red glow. */
+.hero-actions .btn-primary {
+  background: rgba(255,255,255,0.04);
+  color: var(--ink-0);
+  border: 1px solid var(--hair);
+  box-shadow: none;
+}
+.hero-actions .btn-primary:hover {
+  background: rgba(255,255,255,0.08);
+  box-shadow: none;
+  border-color: var(--ink-2);
+}
 .btn-ghost {
   background: rgba(255,255,255,0.04);
   border-color: var(--hair);
