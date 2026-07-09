@@ -1061,6 +1061,13 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   transition: opacity var(--t-fast);
 }
 .trust-item:hover .trust-logo { opacity: 1; }
+/* Drexel wordmark has a lot of empty vertical space around its glyphs,
+   so at the common 40px height it reads visually smaller than the others.
+   Bump it up so the optical weight matches the row. */
+.trust-logo[src*="drexel"] {
+  height: 56px;
+  max-width: 200px;
+}
 @media (max-width: 980px) {
   .trust-logos { justify-content: center; gap: 28px 40px; }
 }
@@ -1069,6 +1076,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   .trust-name { font-size: 16px; }
   .trust-mark { width: 24px; height: 24px; }
   .trust-logo { height: 30px; max-width: 120px; }
+  .trust-logo[src*="drexel"] { height: 42px; max-width: 150px; }
 }
 
 /* ============================================================
