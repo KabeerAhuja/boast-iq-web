@@ -1733,6 +1733,7 @@ section { padding: 96px 0; }
 /* Monthly/Yearly billing toggle on the Player card */
 .plan-toggle {
   display: inline-flex;
+  align-self: flex-start;
   gap: 4px;
   padding: 4px;
   margin-bottom: 18px;
