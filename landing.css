@@ -1774,7 +1774,6 @@ section { padding: 96px 0; }
   color: inherit;
   margin-left: 0;
 }
-.price-billing-note { color: var(--ink-2); font-size: 13px; margin: 6px 0 0; min-height: 18px; }
 
 /* Player-card (Identity & Outcome) tagline + subline.
    Top border on the tagline acts as the divider beneath the price. */
