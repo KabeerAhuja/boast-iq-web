@@ -85,6 +85,32 @@
     });
   });
 
+  /* ===== Pricing: Monthly/Yearly billing toggle ===== */
+  (function () {
+    const toggle = document.getElementById('plan-toggle');
+    if (!toggle) return;
+    const amountEl = document.getElementById('player-price-amount');
+    const unitEl = document.getElementById('player-price-unit');
+    const noteEl = document.getElementById('player-billing-note');
+    const cta = document.getElementById('player-cta');
+    const PLANS = {
+      monthly: { amount: '$35', unit: '/mo', note: 'Billed monthly. Cancel anytime.' },
+      annual:  { amount: '$25', unit: '/mo', note: 'Billed $300/year — save $120 vs monthly.' },
+    };
+    toggle.querySelectorAll('.plan-toggle-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const plan = btn.dataset.plan === 'annual' ? 'annual' : 'monthly';
+        toggle.querySelectorAll('.plan-toggle-btn').forEach((b) =>
+          b.classList.toggle('active', b === btn));
+        const p = PLANS[plan];
+        if (amountEl) amountEl.textContent = p.amount;
+        if (unitEl) unitEl.textContent = p.unit;
+        if (noteEl) noteEl.textContent = p.note;
+        if (cta) cta.href = 'https://app.boast-iq.com/?checkout&plan=' + plan;
+      });
+    });
+  })();
+
   /* ===== Smooth-scroll offset for sticky nav anchors ===== */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
