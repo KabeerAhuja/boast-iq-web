@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Boast IQ — Your Unfair Advantage.</title>
 <meta name="description" content="Play Better, Win More. Get AI-powered game recordings, insights, and stats like the pros." />
+<link rel="canonical" href="https://boast-iq.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 <!-- Favicon + iOS / Android icons -->
 <link rel="icon" type="image/png" href="/assets/logo.png" />
 <link rel="shortcut icon" type="image/png" href="/assets/logo.png" />
@@ -29,11 +31,50 @@
 <meta name="twitter:image" content="https://boast-iq.com/assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://app.boast-iq.com">
 <!-- Preload the hero dashboard image so it starts downloading in parallel with
      the CSS/font requests, not after them. Cuts perceived first paint by seconds. -->
 <link rel="preload" as="image" href="assets/dashboard-preview.png" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="landing.css">
+
+<!-- Structured data (schema.org) — helps Google build a branded knowledge panel + sitelinks -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://boast-iq.com/#organization",
+      "name": "Boast IQ",
+      "url": "https://boast-iq.com/",
+      "logo": "https://boast-iq.com/assets/logo.png",
+      "description": "AI-powered squash game recordings, insights, and stats."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://boast-iq.com/#website",
+      "url": "https://boast-iq.com/",
+      "name": "Boast IQ",
+      "publisher": { "@id": "https://boast-iq.com/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Boast IQ",
+      "url": "https://boast-iq.com/",
+      "applicationCategory": "SportsApplication",
+      "operatingSystem": "Web",
+      "description": "Play Better, Win More. Get AI-powered game recordings, insights, and stats like the pros.",
+      "screenshot": "https://boast-iq.com/assets/dashboard-preview.png",
+      "publisher": { "@id": "https://boast-iq.com/#organization" },
+      "offers": [
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Player", "price": "35", "priceCurrency": "USD" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
