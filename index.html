@@ -3,6 +3,47 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Sentry browser error monitoring. Loaded first so load-time errors are caught.
+     The DSN is public by Sentry's design (safe to commit); paste the marketing
+     project's DSN below. Inert until a real DSN replaces the placeholder. -->
+<script src="https://browser.sentry-cdn.com/9.15.0/bundle.tracing.min.js" crossorigin="anonymous"></script>
+<script>
+  // Init only once a real DSN has been pasted in (the placeholder stays inert).
+  if (window.Sentry && "__SENTRY_WEB_DSN__".indexOf("http") === 0) {
+    Sentry.init({
+      dsn: "__SENTRY_WEB_DSN__",
+      environment: "production",
+      tracesSampleRate: 0.1,
+    });
+  }
+</script>
+
+<!-- Mixpanel product analytics. Public/embeddable project token — safe to commit.
+     Same token as the app (app.boast-iq.com); the shared root domain boast-iq.com
+     lets the default cross_subdomain_cookie unify the visitor's distinct_id across
+     the landing page and the app. Inert until a real token replaces the placeholder. -->
+<script type="text/javascript">
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+</script>
+<script>
+  // Public/embeddable client-side token — paste from mixpanel.com → Project Settings.
+  // Same token as boast-iq-app. Inert (bqTrack no-ops) until the placeholder is replaced.
+  window.__MIXPANEL_TOKEN__ = "8b963f0f946e46cfe3475794051d56ef";
+  window.__mpReady = false;
+  if (window.__MIXPANEL_TOKEN__ && window.__MIXPANEL_TOKEN__ !== "PASTE_MIXPANEL_TOKEN_HERE") {
+    try {
+      mixpanel.init(window.__MIXPANEL_TOKEN__, { track_pageview: true, persistence: "localStorage" });
+      window.__mpReady = true;
+    } catch (e) { /* analytics must never break the page */ }
+  }
+  // Global helper used by the CTA click delegation below. No-ops until ready.
+  window.bqTrack = function (event, props) {
+    if (!window.__mpReady) return;
+    try { mixpanel.track(event, props || {}); } catch (e) {}
+  };
+</script>
+
 <title>Boast IQ — Your Unfair Advantage.</title>
 <meta name="description" content="Play Better, Win More. Get AI-powered game recordings, insights, and stats like the pros." />
 <link rel="canonical" href="https://boast-iq.com/" />
@@ -127,8 +168,7 @@
         Play Better, Win More. Get AI-powered game recordings, insights, and stats like the pros.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="https://app.boast-iq.com/?trial">Upload a match</a>
-        <a class="btn btn-ghost btn-lg" href="https://app.boast-iq.com/?demo" target="_blank" rel="noopener">See it live →</a>
+        <a class="btn btn-primary btn-lg" href="https://app.boast-iq.com/?demo" target="_blank" rel="noopener">See it live →</a>
       </div>
     </div>
 
@@ -415,6 +455,43 @@
   </div>
 </footer>
 
+<!-- Mixpanel CTA tracking (event delegation — resilient to markup changes).
+     Categorizes clicks by destination/role rather than per-anchor bindings.
+     bqTrack no-ops until a real token is set in the head. -->
+<script>
+(function () {
+  function ctaFor(a) {
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("app.boast-iq.com") === -1) return null;
+    if (/[?&]checkout/.test(href)) return "Landing: Start Trial";
+    if (/[?&]demo/.test(href))     return "Landing: See Live Demo";
+    if (/[?&]trial/.test(href)) {
+      // "Upload a match" (hero) vs the generic "Try free" buttons.
+      return /upload/i.test(a.textContent) ? "Landing: Upload Match" : "Landing: Try Free";
+    }
+    return "Landing: Sign In"; // bare app.boast-iq.com link
+  }
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest ? e.target.closest("a, button") : null;
+    if (!el) return;
+    // Outbound app CTAs
+    if (el.tagName === "A") {
+      var name = ctaFor(el);
+      if (name) { window.bqTrack(name, { href: el.getAttribute("href"), text: (el.textContent || "").trim().slice(0, 40) }); return; }
+    }
+    // Pricing billing-period toggle
+    if (el.classList.contains("plan-toggle-btn")) {
+      window.bqTrack("Landing: Plan Toggle", { plan: el.getAttribute("data-plan") }); return;
+    }
+    // Feature tabs (heatmap / shot / rally / coach)
+    var tab = el.closest ? el.closest(".feat-tab") : null;
+    if (tab) { window.bqTrack("Landing: Feature Tab", { feature: tab.getAttribute("data-feat") }); return; }
+  }, true);
+  // Coach contact form submit (fires just before the mailto redirect)
+  var coachForm = document.querySelector(".coaches-cta");
+  if (coachForm) coachForm.addEventListener("submit", function () { window.bqTrack("Landing: Contact Coach"); }, true);
+})();
+</script>
 <script src="landing.js"></script>
 </body>
 </html>
