@@ -42,7 +42,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg-0);
   color: var(--ink-0);
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -1012,7 +1012,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
 }
 .trust-line {
   margin: 0;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -1046,7 +1046,7 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   flex-shrink: 0;
 }
 .trust-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
