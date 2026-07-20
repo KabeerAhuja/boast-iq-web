@@ -186,18 +186,22 @@ h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: 
   box-shadow: 0 8px 22px rgba(0, 240, 255, 0.40);
 }
 
-/* Hero "Upload a match": no highlight — plain muted button so
-   Watch demo stays the visual anchor. Overrides the default red glow. */
+/* Hero "See it live": the sole hero CTA, highlighted cyan to draw the eye
+   and sized up a touch so it's the clear visual anchor. */
 .hero-actions .btn-primary {
-  background: rgba(255,255,255,0.04);
-  color: var(--ink-0);
-  border: 1px solid var(--hair);
-  box-shadow: none;
+  background: var(--highlight);
+  color: #0b1417;
+  border: 1px solid var(--highlight);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.35);
+  font-weight: 700;
+  height: 60px;
+  padding: 0 32px;
+  font-size: 17px;
 }
 .hero-actions .btn-primary:hover {
-  background: rgba(255,255,255,0.08);
-  box-shadow: none;
-  border-color: var(--ink-2);
+  background: var(--highlight-soft);
+  border-color: var(--highlight-soft);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.45);
 }
 .btn-ghost {
   background: rgba(255,255,255,0.04);
